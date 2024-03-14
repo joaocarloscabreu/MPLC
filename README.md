@@ -53,4 +53,4 @@ to discuss what you would like to change.
 
 ## Author
 
-Joao Abreu, joaocarloscabreu@gmail.com
+Joao Abreu
