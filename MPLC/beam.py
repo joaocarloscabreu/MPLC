@@ -44,7 +44,7 @@ class Set_Beams:
         self.lam = lam
         self.id = id
         
-
+        
         
         # Set positions to zero
         if positions is None:
@@ -115,13 +115,12 @@ class Set_Beams:
         if dy is None:
             dy = factor_mult * (self.X[0,-1] - self.X[0,0])/(self.num_modes+factor)
 
-        if num is None:
-            num = self.num_spots
+
         i = 0
         j = 0
         ix = 0
         self.positions = []
-        while i < num:
+        while i < self.num_spots:
             iy = -1 * ix + 2*j
 
             x = -ix*dx + x0
@@ -153,7 +152,7 @@ class Set_Beams:
         # lam = wavelength of the beams
         #
         # ----------------------------------------
-
+        plt.ioff()
         for i in range(self.num_spots):
             pos_x = self.positions[i][0]
             pos_y = self.positions[i][1]
@@ -200,14 +199,19 @@ class Set_Beams:
 
     def plot(self, X = None, Y = None, perMode: bool = False):
         # Return the figure and axis of the total ensemble of the beams
+        plt.ioff()
         if X is None:
             X = self.X
         if Y is None:
             Y = self.Y
         if not perMode:
             Total = self.get_total()
-            fig,ax = plt.subplots()
+            fig, ax = plt.subplots()
             ax.pcolormesh(X,Y,Total)
+            ax.ticklabel_format(axis='both', scilimits=[-1, 1])
+            ax.set_title("Intensity of the fields")
+            ax.set_ylabel("y (m)")
+            ax.set_xlabel("x (m)")
             return fig,ax
         else:
             pass
