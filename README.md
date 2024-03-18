@@ -1,7 +1,42 @@
 
-# MPLC
 
-A python code simulating the Multi-Plane Light Conversion (MPLC) technology based on the article https://doi.org/10.1038/s41467-019-09840-4
+# Multi-plane Light Conversion
+
+
+
+Simulation of the Multi-Plane Light Conversion (MPLC)[^1] based on the article by Fontaine *et al* [^2]. This technology transform a set of Gaussian beams into a compacted Hermite-Gaussian Beams, which can be transformed into Laguerre-Gaussian (LG) beams[^3]. In telecommunication services, LG beams are used to transfer information over the atmosphere with low losses[^4].
+
+A simplified scheme of the MPLC technology is represented in Figure [1](#fig:MPLC). The simulation uses the wavefront matching algorithm[^5] to calculate the fields and phase masks at each plane. The intensity of the fields at each plane that reflected the fields are shown in Figure [2](#fig:fields). The correspondent phase masks are shown in Figure [3](#fig:masks).
+
+
+<figure>
+<figcaption>Figure  <a id="fig:MPLC">1</a>. Simplified scheme representing the MPLC technology. </figcaption>
+<img src="images/MPLC.png"/>
+</figure>
+
+<figure>
+<figcaption>Figure  <a id="fig:fields">2</a>. Plot of the intensity of the fields at the different planes of the MPLC. </figcaption>
+<img src="images/fields.png"/>
+</figure>
+
+<figure>
+<figcaption>Figure  <a id="fig:masks">3</a>. Plot of the phase masks at the different planes of the MPLC. </figcaption>
+<img src="images/masks.png" alt="alt test" title="Hello"/>
+
+</figure>
+
+[^1]: J.-F. Morizur, L. Nicholls, P. Jian, S. Armstrong, N. Treps, B. Hage, M. Hsu, W. Bowen, J. Janousek, and H.-A. Bachor. Programmable unitary spatial mode manipulation. Journal of the Optical Society of America A, 26(11), 2010.
+
+[^2]: N. K. Fontaine, R. Ryf, H. Chen, D. T. Neilson, K. Kim, and J. Carpenter. Laguerre-gaussian mode sorter. Nature Communications,
+10(1865), 2019.
+
+[^3]: L. Allen, M. W. Beijersbergen, R. J. C. Spreeuw, and J. P. Woerdman. Orbital angular momentum of light and the transformation
+of laguerre-gaussian laser modes. Physical Review A, 45(8185), 1992.
+
+[^4]: J. M. Kahn A. Belmonte. Optimal modes for spatially multiplexed free-space communication in atmospheric turbulence. Optics Express, 29(26), 2021.
+
+[^5]: Y. Sakamaki, T. Saida, T. Hashimoto, and H. Takahashi. New optical waveguide design based on wavefront matching method.
+Journal of Lightwave Technology, 25(11), 2007.
 
 ## Installation
 
@@ -13,7 +48,7 @@ pip install MPLC
 
 ## Usage
 
-The package comes with a jupyter notebook called "example.ipynb", to exemplify the usage of the cpde.
+The package comes with a jupyter notebook called "example.ipynb", to exemplify the usage of the code.
 
 ```python
 from MPLC.system import System
